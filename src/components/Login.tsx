@@ -43,7 +43,8 @@ const Login = ({ showRegister }: { showRegister: () => void }) => {
       alert(data?.message);
       saveToLocalStorage("ACCESS_TOKEN", data?.accessToken);
       getUser();
-      data?.role === "ADMIN" ? push("/admin-panel") : push("/home");
+      if (data?.role === "ADMIN") return push("/admin-panel");
+      else return push("/home");
     } catch (error) {
       console.error("Error during login:", error);
       alert("Login failed. Please check your credentials and try again.");
