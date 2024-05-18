@@ -20,7 +20,7 @@ const AdminPanel = () => {
 
   return (
     <section className="main-container min-h-screen py-8 lg:py-12">
-      <div className="flex justify-end">
+      <div className="flex justify-end pb-8">
         <button
           className="btn-primary"
           onClick={() => {
