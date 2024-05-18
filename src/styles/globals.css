@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #4f46e5 transparent;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 0.25em;
+  height: 0.25em;
+}
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 10em;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+*:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  color: black;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth !important;
+}
+body.modal-open {
+  overflow: hidden; /* see "modal-open" in Modal.tsx */
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* //? common styling */
+@layer components {
+  .nav-container {
+    @apply w-full px-4 md:px-6;
+  }
+  .main-container {
+    @apply w-full max-w-[1280px] mx-auto px-4 md:px-6;
+  }
+  .common-transition {
+    @apply transition-all ease-in-out duration-300 !important;
+  }
+  .top-spacing {
+    @apply pt-6 md:pt-10 lg:pt-12;
+  }
+  .bottom-spacing {
+    @apply pb-6 md:pb-10 lg:pb-12;
+  }
+  .title {
+    @apply text-[22px] leading-[2rem] text-primary font-normal;
+  }
+  .description {
+    @apply text-sm text-gray-500 tracking-wider;
+  }
+  .btn-primary {
+    @apply text-sm tracking-wide capitalize bg-primary hover:bg-stone-900 text-white rounded-sm common-transition px-4 py-2;
+  }
+  .btn-secondary {
+    @apply text-sm tracking-wide capitalize bg-white text-primary rounded-sm common-transition px-4 py-2;
+  }
+}
