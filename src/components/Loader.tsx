@@ -8,10 +8,8 @@ const Loader = ({ visible }: Props) => {
         visible ? "block" : "hidden"
       }`}
     >
-      <div className="relative h-52 w-52">
-        <div className="animate-spin h-52 w-52 rounded-full border-x-2 border-t-2 border-x-primary border-t-secondary" />
-        <p className="animate-pulse">Loader...</p>
-      </div>
+      <div className="animate-spin h-52 w-52 rounded-full border-x-2 border-t-2 border-x-primary border-t-secondary" />
+      <p className="animate-pulse">Loader...</p>
     </div>
   );
 };
