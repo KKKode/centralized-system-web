@@ -40,7 +40,6 @@ const Login = ({ showRegister }: { showRegister: () => void }) => {
       if (response?.status !== 200) {
         throw new Error("Network response was not ok " + response?.statusText);
       }
-      console.log("data--", data);
       saveToLocalStorage("ACCESS_TOKEN", data?.accessToken);
       getUser();
 

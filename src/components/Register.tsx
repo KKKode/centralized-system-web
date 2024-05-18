@@ -40,7 +40,6 @@ const Register = ({ showLogin }: { showLogin: () => void }) => {
       if (response?.status !== 201) {
         throw new Error("Network response was not ok " + response?.statusText);
       }
-      console.log("data--", data);
       showLogin();
       alert(data?.message);
     } catch (error) {

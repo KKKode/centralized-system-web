@@ -7,13 +7,11 @@ import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  // console.log("router--", router.pathname === "/");
   const { getUser, user } = useAuth();
   useEffect(() => {
     getUser();
     let agent =
       typeof window !== "undefined" && (window as any).navigator.userAgent;
-    console.log("agent--", agent);
 
     (async () => {
       if (
@@ -41,7 +39,6 @@ export default function App({ Component, pageProps }: AppProps) {
       });
 
       const result = await res.json();
-      console.log({ result });
     })();
   }, [router.pathname, getUser, user?._id]);
 

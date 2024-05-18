@@ -13,7 +13,6 @@ const AdminPanel = () => {
     const resData = await res.json();
     setData(resData?.data);
   };
-  console.log("data--", data?.data);
 
   return (
     <section className="main-container min-h-screen h-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 font-semibold text-gray-800 py-8 lg:py-12">
