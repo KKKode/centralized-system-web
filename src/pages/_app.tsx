@@ -43,7 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
       const result = await res.json();
       console.log({ result });
     })();
-  }, [router.pathname]);
+  }, [router.pathname, getUser, user?._id]);
 
   return <Component {...pageProps} />;
 }
