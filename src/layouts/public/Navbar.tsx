@@ -1,6 +1,10 @@
+import useAuth from "@/hooks/useAuth";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+  const { push } = useRouter();
   return (
     <nav className="w-full sticky z-[999] top-0 bg-white shadow-sm py-4">
       <section className="main-container flex items-center justify-between gap-4 text-gray-800">
@@ -25,6 +29,17 @@ const Navbar = () => {
           <Link href="/contact">
             <p>Contact</p>
           </Link>
+          {user?._id ? (
+            <button
+              className="btn-primary"
+              onClick={() => {
+                logout();
+                push("/");
+              }}
+            >
+              Logout
+            </button>
+          ) : null}
         </div>
       </section>
     </nav>

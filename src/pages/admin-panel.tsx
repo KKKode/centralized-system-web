@@ -1,8 +1,12 @@
 import adminProtected from "@/hooks/adminProtected";
+import useAuth from "@/hooks/useAuth";
 import { BASE_URL } from "@/utils";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const AdminPanel = () => {
+  const { push } = useRouter();
+  const { logout } = useAuth();
   const [data, setData] = useState<any>();
   useEffect(() => {
     fetchData();
@@ -16,6 +20,17 @@ const AdminPanel = () => {
 
   return (
     <section className="main-container min-h-screen h-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 font-semibold text-gray-800 py-8 lg:py-12">
+      <div className="flex justify-end">
+        <button
+          className="btn-primary"
+          onClick={() => {
+            logout();
+            push("/");
+          }}
+        >
+          Logout
+        </button>
+      </div>
       {data?.map((item: any) => (
         <div
           key={item?._id}
