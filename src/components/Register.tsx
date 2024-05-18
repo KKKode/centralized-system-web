@@ -40,8 +40,8 @@ const Register = ({ showLogin }: { showLogin: () => void }) => {
       if (response?.status !== 201) {
         throw new Error("Network response was not ok " + response?.statusText);
       }
-      showLogin();
       alert(data?.message);
+      showLogin();
     } catch (error) {
       console.error("Error during login:", error);
       alert("Register failed. Please check your credentials and try again.");

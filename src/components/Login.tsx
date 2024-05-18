@@ -40,11 +40,10 @@ const Login = ({ showRegister }: { showRegister: () => void }) => {
       if (response?.status !== 200) {
         throw new Error("Network response was not ok " + response?.statusText);
       }
+      alert(data?.message);
       saveToLocalStorage("ACCESS_TOKEN", data?.accessToken);
       getUser();
-
       data?.role === "ADMIN" ? push("/admin-panel") : push("/home");
-      alert(data?.message);
     } catch (error) {
       console.error("Error during login:", error);
       alert("Login failed. Please check your credentials and try again.");
