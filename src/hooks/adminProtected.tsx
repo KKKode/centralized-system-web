@@ -13,7 +13,7 @@ const adminProtected = (PassedComponent: any) =>
       (() => {
         mounted.current = true;
         if (isUserLoading || !mounted.current) return;
-        if (isUserLoading || !user?._id || user?.role !== "ADMIN") {
+        if (!user?._id) {
           push("/");
         }
       })();
