@@ -13,7 +13,7 @@ const Navbar = () => {
             <h2 className="text-2xl font-bold">Logo</h2>
           </Link>
         </div>
-        <div className="flex justify-end gap-4">
+        <div className="flex items-center justify-end gap-4">
           <Link href="/home">
             <p>Home</p>
           </Link>
